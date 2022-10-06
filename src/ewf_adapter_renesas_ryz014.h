@@ -469,6 +469,8 @@ adapter_ptr->mqtt_basic_api_ptr = &ewf_adapter_renesas_ryz014_api_mqtt_basic;   
 #define EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_MQTT_BASIC_API(adapter_ptr)
 #endif /* EWF_ADAPTER_RENESAS_RYZ014_MQTT_BASIC_ENABLED */
 
+static ewf_adapter_renesas_ryz014 ewf_adapter_renesas_ryz014__implementation__renesas_ryz014 = {0};                                                            \
+static ewf_adapter ewf_adapter_renesas_ryz014__adapter__renesas_ryz014 = {0};                                                                                  \
  /**
   * @brief Declare a Renesas RYZ014 adapter
   * @param[in,out] adapter_ptr a pointer to an adapter that will be initialized to point to the one statically declared by the macro
@@ -478,23 +480,21 @@ adapter_ptr->mqtt_basic_api_ptr = &ewf_adapter_renesas_ryz014_api_mqtt_basic;   
   * @param[in] interface_ptr_param a pointer to an interface, used by the adapter to talk with the hardware
   */
 #define EWF_ADAPTER_RENESAS_RYZ014_STATIC_DECLARE(adapter_ptr, adapter_name_symb, message_allocator_ptr_param, data_allocator_ptr_param, interface_ptr_param)       \
-do {                                                                                                                                                                \
-static ewf_adapter_renesas_ryz014 ewf_adapter_renesas_ryz014__implementation__##adapter_name_symb = {0};                                                            \
-static ewf_adapter ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb = {0};                                                                                  \
-interface_ptr_param->message_allocator_ptr = message_allocator_ptr_param;                                                                                           \
-interface_ptr_param->data_allocator_ptr = data_allocator_ptr_param;                                                                                                 \
-interface_ptr_param->urc_callback = ewf_adapter_renesas_ryz014_urc_callback;                                                                                        \
-ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.interface_ptr = interface_ptr_param;                                                                       \
-ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.implementation_ptr = &(ewf_adapter_renesas_ryz014__implementation__##adapter_name_symb);                   \
-adapter_ptr = &(ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb);                                                                                          \
-interface_ptr_param->adapter_ptr = adapter_ptr;                                                                                                                     \
-ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.control_api_ptr = &ewf_adapter_renesas_ryz014_api_control;                                                 \
-ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.info_api_ptr = &ewf_adapter_renesas_ryz014_api_info;                                                       \
-EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_TCP_API(adapter_ptr);                                                                                                         \
-EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_UDP_API(adapter_ptr);                                                                                                         \
-EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_HEADER(adapter_ptr);                                                                                                          \
-EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_TLS_BASIC_API(adapter_ptr);                                                                                                   \
-EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_MQTT_BASIC_API(adapter_ptr);                                                                                                  \
+do {\
+	interface_ptr_param->message_allocator_ptr = message_allocator_ptr_param;                                                                                           \
+	interface_ptr_param->data_allocator_ptr = data_allocator_ptr_param;                                                                                                 \
+	interface_ptr_param->urc_callback = ewf_adapter_renesas_ryz014_urc_callback;                                                                                        \
+	ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.interface_ptr = interface_ptr_param;                                                                       \
+	ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.implementation_ptr = &(ewf_adapter_renesas_ryz014__implementation__##adapter_name_symb);                   \
+	adapter_ptr = &(ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb);                                                                                          \
+	interface_ptr_param->adapter_ptr = adapter_ptr;                                                                                                                     \
+	ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.control_api_ptr = &ewf_adapter_renesas_ryz014_api_control;                                                 \
+	ewf_adapter_renesas_ryz014__adapter__##adapter_name_symb.info_api_ptr = &ewf_adapter_renesas_ryz014_api_info;                                                       \
+	EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_TCP_API(adapter_ptr);                                                                                                         \
+	EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_UDP_API(adapter_ptr);                                                                                                         \
+	EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_HEADER(adapter_ptr);                                                                                                          \
+	EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_TLS_BASIC_API(adapter_ptr);                                                                                                   \
+	EWF_ADAPTER_RENESAS_RYZ014_INITIALIZE_MQTT_BASIC_API(adapter_ptr);                                                                                                  \
 } while(0)
 
 /** @} *** group_adapter_renesas_ryz014_declaration */
