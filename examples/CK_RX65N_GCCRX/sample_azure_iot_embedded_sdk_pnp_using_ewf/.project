@@ -12,6 +12,7 @@
 		</buildCommand>
 		<buildCommand>
 			<name>com.renesas.smc.ui.pgsupport.SCContentBuilder</name>
+			<triggers></triggers>
 			<arguments>
 			</arguments>
 		</buildCommand>

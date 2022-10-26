@@ -1,4 +1,4 @@
-/************************************************************************//**
+/**************************SCI06_ENABLE**********************************************//**
  * @file
  * @version Preview
  * @copyright Copyright (c) Microsoft Corporation. All rights reserved.
@@ -9,6 +9,7 @@
 #include "ewf_interface_rx_uart.h"
 #include "ewf_lib.h"
 
+//#define SCI06_ENABLE
 
 
 /******************************************************************************
@@ -67,7 +68,11 @@ ewf_result ewf_interface_rx_uart_hardware_start(ewf_interface* interface_ptr)
 	uint8_t     priority = 14;
 #endif
 
+#ifndef SCI06_ENABLE
 	R_SCI_PinSet_SCI0();
+#else
+	R_SCI_PinSet_SCI6();
+#endif
 
 	/* Set up the configuration data structure for asynchronous (UART) operation. */
 	ewf_rx_sci_config.async.baud_rate    = 921600;
@@ -82,7 +87,11 @@ ewf_result ewf_interface_rx_uart_hardware_start(ewf_interface* interface_ptr)
 	 *  Provide address of the config structure,
 	 *  the callback function to be assigned,
 	 *  and the location for the handle to be stored.*/
+#ifndef SCI06_ENABLE
 	sci_err = R_SCI_Open(SCI_CH0, SCI_MODE_ASYNC, &ewf_rx_sci_config, ewf_rx_uart_callback, &ewf_rx_sci_handle);
+#else
+	sci_err = R_SCI_Open(SCI_CH6, SCI_MODE_ASYNC, &ewf_rx_sci_config, ewf_rx_uart_callback, &ewf_rx_sci_handle);
+#endif
 
 	/* If there were an error this would demonstrate error detection of API calls. */
 	if (SCI_SUCCESS != sci_err)
@@ -120,7 +129,11 @@ ewf_result ewf_interface_rx_uart_hardware_stop(ewf_interface* interface_ptr)
 	ewf_platform_mutex_destroy(&implementation_ptr->mutex);
 #endif
 
+#ifndef SCI06_ENABLE
 	R_SCI_Close(SCI_CH0);
+#else
+	R_SCI_Close(SCI_CH6);
+#endif
 
 	return EWF_RESULT_OK;
 }
