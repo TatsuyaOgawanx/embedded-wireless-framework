@@ -348,7 +348,7 @@
         <Item currentVect="107" groupchild="&lt;br&gt;1-SDIOI" id="BL2" priority="15" usedState="Not Use"/>
         <Item currentVect="108" id="RSPI2_SPRI2" priority="15" usedState="Not Use"/>
         <Item currentVect="109" id="RSPI2_SPTI2" priority="15" usedState="Not Use"/>
-        <Item currentVect="110" groupchild="&lt;br&gt;1-TEI0&lt;br&gt;2-ERI0&lt;br&gt;3-TEI1&lt;br&gt;4-ERI1&lt;br&gt;5-TEI2&lt;br&gt;6-ERI2&lt;br&gt;7-TEI3&lt;br&gt;8-ERI3&lt;br&gt;9-TEI4&lt;br&gt;10-ERI4&lt;br&gt;11-TEI5&lt;br&gt;12-ERI5&lt;br&gt;13-TEI6&lt;br&gt;14-ERI6&lt;br&gt;15-TEI7&lt;br&gt;16-ERI7&lt;br&gt;17-TEI12&lt;br&gt;18-ERI12&lt;br&gt;19-SCIX0&lt;br&gt;20-SCIX1&lt;br&gt;21-SCIX2&lt;br&gt;22-SCIX3&lt;br&gt;23-QSPSSLI&lt;br&gt;24-FERRI&lt;br&gt;25-MENDI&lt;br&gt;26-OVFI&lt;br&gt;27-DOPCI&lt;br&gt;28-PCFEI&lt;br&gt;29-PCERI" id="BL0" priority="15" usedState="Not Use"/>
+        <Item currentVect="110" groupchild="&lt;br&gt;1-TEI0&lt;br&gt;2-ERI0&lt;br&gt;3-TEI1&lt;br&gt;4-ERI1&lt;br&gt;5-TEI2&lt;br&gt;6-ERI2&lt;br&gt;7-TEI3&lt;br&gt;8-ERI3&lt;br&gt;9-TEI4&lt;br&gt;10-ERI4&lt;br&gt;11-TEI5&lt;br&gt;12-ERI5&lt;br&gt;13-TEI6&lt;br&gt;14-ERI6&lt;br&gt;15-TEI7&lt;br&gt;16-ERI7&lt;br&gt;17-TEI12&lt;br&gt;18-ERI12&lt;br&gt;19-SCIX0&lt;br&gt;20-SCIX1&lt;br&gt;21-SCIX2&lt;br&gt;22-SCIX3&lt;br&gt;23-QSPSSLI&lt;br&gt;24-FERRI&lt;br&gt;25-MENDI&lt;br&gt;26-OVFI&lt;br&gt;27-DOPCI&lt;br&gt;28-PCFEI&lt;br&gt;29-PCERI" id="BL0" priority="3" usedState="Used"/>
         <Item currentVect="111" groupchild="&lt;br&gt;1-CDETI&lt;br&gt;2-CACI&lt;br&gt;3-SDACI&lt;br&gt;4-CDETIO&lt;br&gt;5-ERRIO&lt;br&gt;6-ACCIO&lt;br&gt;7-OEI1&lt;br&gt;8-OEI2&lt;br&gt;9-OEI3&lt;br&gt;10-OEI4&lt;br&gt;11-TEI0&lt;br&gt;12-EEI0&lt;br&gt;13-TEI2&lt;br&gt;14-EEI2&lt;br&gt;15-S12CMPAI&lt;br&gt;16-S12CMPBI&lt;br&gt;17-S12CMPAI1&lt;br&gt;18-S12CMPBI1&lt;br&gt;19-TEI8&lt;br&gt;20-ERI8&lt;br&gt;21-TEI9&lt;br&gt;22-ERI9&lt;br&gt;23-TEI1&lt;br&gt;24-EEI1" id="BL1" priority="15" usedState="Not Use"/>
         <Item currentVect="112" groupchild="&lt;br&gt;1-TEI10&lt;br&gt;2-ERI10&lt;br&gt;3-TEI11&lt;br&gt;4-ERI11&lt;br&gt;5-SPII0&lt;br&gt;6-SPEI0&lt;br&gt;7-SPII1&lt;br&gt;8-SPEI1&lt;br&gt;9-SPII2&lt;br&gt;10-SPEI2" id="AL0" priority="15" usedState="Not Use"/>
         <Item currentVect="113" groupchild="&lt;br&gt;1-EINT0&lt;br&gt;2-VPOS&lt;br&gt;3-GR1UF&lt;br&gt;4-GR2UF&lt;br&gt;5-DRW_IRQ" id="AL1" priority="15" usedState="Not Use"/>
@@ -497,11 +497,11 @@
         <pinItem allocation="10" comments="" direction="None" id="EMLE" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="20" comments="" direction="None" id="XTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="18" comments="" direction="None" id="XCOUT" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="13" comments="" direction="None" id="CTS0#" isUsedBySoftware="true" locked="false" operationMode="" status="65280"/>
+        <pinItem allocation="34" comments="" direction="None" id="CTS0#" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="70" comments="" direction="None" id="RXD5" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="27" comments="" direction="None" id="SMOSI0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="67" comments="" direction="None" id="SMOSI5" isUsedBySoftware="true" locked="false" operationMode="" status="65280"/>
         <pinItem allocation="17" comments="" direction="None" id="XCIN" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="67" comments="" direction="None" id="TXD5" isUsedBySoftware="false" locked="false" operationMode="" status="0"/>
         <pinItem allocation="22" comments="" direction="None" id="EXTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="16" comments="" direction="None" id="FINED" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="26" comments="" direction="None" id="SMISO0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
@@ -629,7 +629,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="51a6cffa-d266-41d1-bdae-7947a9675743" inuse="true" name="threadx">
+        <configuration enable="true" exclude="false" id="102c8386-5762-4dd5-aeb9-bed1a6dd47f3" inuse="true" name="threadx">
             <component description="Dependency: None&#10;Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" detailDescription="Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" display="Azure RTOS ThreadX" id="threadx6.1.11_rel-rx-1.0.0" version="6.1.11_rel-rx-1.0.0">
                 <gridItem id="USE_TX_MAX_PRIORITIES" selectedIndex="0"/>
                 <gridItem id="TX_MAX_PRIORITIES" selectedIndex="32"/>
@@ -678,11 +678,11 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="26082430-df7a-4b3b-9cb1-f19b6b1c6bea" inuse="true" name="netxduo_addons">
+        <configuration enable="true" exclude="false" id="1b8e23b1-a109-4ec7-9c8d-5d54b1f09b4b" inuse="true" name="netxduo_addons">
             <component description="Dependency: filex, netxduo&#10;Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." detailDescription="Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." display="Azure RTOS NetX Duo Addons" id="netxduo_addons6.1.11_rel-rx-1.0.0" version="6.1.11_rel-rx-1.0.0"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="23c321a2-1cef-445d-8991-7e1198921679" inuse="true" name="netxduo">
+        <configuration enable="true" exclude="false" id="47c5c9e3-f711-4bb2-8e30-a71af4e6ed77" inuse="true" name="netxduo">
             <component description="Dependency: threadx&#10;Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" detailDescription="Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" display="Azure RTOS NetX Duo" id="netxduo6.1.11_rel-rx-1.0.0" version="6.1.11_rel-rx-1.0.0">
                 <gridItem id="USE_NX_MAX_PHYSICAL_INTERFACES" selectedIndex="0"/>
                 <gridItem id="NX_MAX_PHYSICAL_INTERFACES" selectedIndex="1"/>
@@ -843,7 +843,7 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="04dd14a7-1638-4928-b019-8d19c3d2a01d" inuse="true" name="filex">
+        <configuration enable="true" exclude="false" id="dd0148ac-a22a-4efe-b7a6-368e187e3205" inuse="true" name="filex">
             <component description="Dependency: threadx&#10;Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" detailDescription="Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" display="Azure RTOS FileX" id="filex6.1.11_rel-rx-1.0.0" version="6.1.11_rel-rx-1.0.0">
                 <gridItem id="USE_FX_MAX_LONG_NAME_LEN" selectedIndex="0"/>
                 <gridItem id="FX_MAX_LONG_NAME_LEN" selectedIndex="256"/>
@@ -1128,7 +1128,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="7ea74b86-9177-42db-abc0-da0d27f6db31" inuse="true" name="azurertos_object">
+        <configuration enable="true" exclude="false" id="591a922c-7a0f-4076-823b-91886d895b25" inuse="true" name="azurertos_object">
             <allocatable id="" name="" type="">
                 <allocatable id="THREAD" name="THREAD" type="TABALLOCATABLE">
                     <allocatable id="THREAD1" name="THREAD1" type="ROWALLOCATABLE">
@@ -1144,7 +1144,7 @@
                     </allocatable>
                 </allocatable>
             </allocatable>
-            <component description="" detailDescription="" display="AzureRTOS Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.azurertos.object" version="1.0.111"/>
+            <component description="" detailDescription="" display="AzureRTOS Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.azurertos.object" version="1.0.112"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
     </tool>

@@ -47,6 +47,7 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.checkRtos.435677605" name="Check RTOS" superClass="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.checkRtos" useByScannerDiscovery="false" value="unusedRtos" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.hasDsp.61327332" name="Has DSP" superClass="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.hasDsp" useByScannerDiscovery="false" value="false" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.deviceFamily.91148167" name="Device Family" superClass="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.deviceFamily" useByScannerDiscovery="false" value="RX65N" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize.1641367740" name="Suppress to change double type and long double type as float type (-dbl_size)" superClass="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.doubleSize" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler.466082878" name="Compiler" superClass="com.renesas.cdt.managedbuild.renesas.ccrx.base.compiler">
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.fpu.1674154568" name="Use floating point arithmetic instructions (-fpu/-nofpu)" superClass="com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.fpu" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrx.compiler.option.fpu.yes" valueType="enumerated"/>
@@ -220,4 +221,5 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

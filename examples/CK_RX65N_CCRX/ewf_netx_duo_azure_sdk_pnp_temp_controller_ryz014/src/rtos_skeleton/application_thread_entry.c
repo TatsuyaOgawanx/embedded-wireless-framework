@@ -62,10 +62,13 @@ Includes   <System Includes> , "Project Includes"
 
 #include "ewf_example.config.h"
 
+/* Include the sample.  */
+extern VOID sample_entry(NX_IP* ip_ptr, NX_PACKET_POOL* pool_ptr, NX_DNS* dns_ptr, UINT (*unix_time_callback)(ULONG *unix_time));
+
 
 /* Define user configurable symbols. */
 #ifndef SAMPLE_IP_STACK_SIZE
-#define SAMPLE_IP_STACK_SIZE          (2048*2)
+#define SAMPLE_IP_STACK_SIZE          (2048)
 #endif /* SAMPLE_IP_STACK_SIZE  */
 
 #ifndef SAMPLE_PACKET_COUNT
@@ -73,7 +76,7 @@ Includes   <System Includes> , "Project Includes"
 #endif /* SAMPLE_PACKET_COUNT  */
 
 #ifndef SAMPLE_PACKET_SIZE
-#define SAMPLE_PACKET_SIZE            (1560*2)
+#define SAMPLE_PACKET_SIZE            (1560)
 #endif /* SAMPLE_PACKET_SIZE  */
 
 #define SAMPLE_POOL_SIZE              ((SAMPLE_PACKET_SIZE + sizeof(NX_PACKET)) * SAMPLE_PACKET_COUNT)
@@ -158,9 +161,9 @@ void application_thread_entry(ULONG entry_input)
 	PORTA.PDR.BIT.B1= 1;
 	tx_thread_sleep (200);
 	PORTA.PODR.BIT.B1= 0;
-	EWF_LOG("Waiting for the module to Power Reset!\r\n");
+	printf("Waiting for the module to Power Reset!\r\n");
 	ewf_platform_sleep(300);
-	EWF_LOG("Ready\r\n");
+	printf("Ready\r\n");
 
     // Start the adapter
     if (ewf_result_failed(result = ewf_adapter_start(adapter_ptr)))
@@ -264,7 +267,7 @@ void application_thread_entry(ULONG entry_input)
     }
 
     /* Save the adapter pointer in the IP instance */
-    ip_0.nx_ip_reserved_ptr = adapter_ptr;
+    ip_0.nx_ip_interface->nx_interface_additional_link_info = adapter_ptr;
 
     /* Enable ARP and supply ARP cache memory for IP Instance 0.  */
     status = nx_arp_enable(&ip_0, (VOID *)&sample_arp_cache_area[0], sizeof(sample_arp_cache_area));
@@ -318,17 +321,17 @@ void application_thread_entry(ULONG entry_input)
     nx_ip_gateway_address_get(&ip_0, &gateway_address);
 
     /* Output IP address and gateway address. */
-    EWF_LOG("IP address: %lu.%lu.%lu.%lu\r\n",
+    printf("IP address: %lu.%lu.%lu.%lu\r\n",
            (ip_address >> 24),
            (ip_address >> 16 & 0xFF),
            (ip_address >> 8 & 0xFF),
            (ip_address & 0xFF));
-    EWF_LOG("Mask: %lu.%lu.%lu.%lu\r\n",
+    printf("Mask: %lu.%lu.%lu.%lu\r\n",
            (network_mask >> 24),
            (network_mask >> 16 & 0xFF),
            (network_mask >> 8 & 0xFF),
            (network_mask & 0xFF));
-    EWF_LOG("Gateway: %lu.%lu.%lu.%lu\r\n",
+    printf("Gateway: %lu.%lu.%lu.%lu\r\n",
            (gateway_address >> 24),
            (gateway_address >> 16 & 0xFF),
            (gateway_address >> 8 & 0xFF),
@@ -345,7 +348,7 @@ void application_thread_entry(ULONG entry_input)
     {
 
          /* Start SNTP to sync the local time.  */
-         status = 1;//sntp_time_sync();
+         status = sntp_time_sync();
 
          /* Check status.  */
          if(status == NX_SUCCESS)
@@ -423,7 +426,7 @@ UINT    dns_server_address_size = 12;
     }
 
     /* Output DNS Server address.  */
-    EWF_LOG("DNS Server address: %lu.%lu.%lu.%lu\r\n",
+    printf("DNS Server address: %lu.%lu.%lu.%lu\r\n",
            (dns_server_address[0] >> 24),
            (dns_server_address[0] >> 16 & 0xFF),
            (dns_server_address[0] >> 8 & 0xFF),
