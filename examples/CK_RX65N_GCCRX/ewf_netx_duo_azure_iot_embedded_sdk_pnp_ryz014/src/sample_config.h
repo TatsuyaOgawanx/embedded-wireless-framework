@@ -16,7 +16,6 @@
 extern   "C" {
 #endif
 
-
 /* This sample uses Symmetric key (SAS) to connect to IoT Hub by default,
    simply defining USE_DEVICE_CERTIFICATE and setting your device certificate in sample_device_identity.c
    to connect to IoT Hub with x509 certificate. Set up X.509 security in your Azure IoT Hub,
@@ -51,6 +50,8 @@ TODO`s: Configure core settings of application for your IoTHub.
 /*
 #define DISABLE_DEVICE_TWIN_SAMPLE
 */
+
+//#define DISABLE_ADU_SAMPLE
 
 #ifndef ENABLE_DPS_SAMPLE
 

@@ -38,45 +38,26 @@ Includes   <System Includes> , "Project Includes"
 #include "nxd_sntp_client.h"
 #include "nx_secure_tls_api.h"
 
-/* Inclusion of .c files is for demo purposes only.
- * In production code, please compile the below .c files as you would do for other source files :
- * In your IDE add the files to your project, in your make files add the files to your source list, etc.. */
-#include "ewf_lib.c"
-#include "ewf_platform_threadx.c"
-#include "ewf_allocator.c"
-#include "ewf_allocator_threadx.c"
-#include "ewf_interface.c"
-#include "ewf_interface_rx_uart.c"
-#include "ewf_adapter.c"
-#include "ewf_adapter_api_tcp.c"
-#include "ewf_adapter_api_udp.c"
-#include "ewf_adapter_api_mqtt_basic.c"
-#include "ewf_adapter_api_tls_basic.c"
-#include "ewf_adapter_api_info.c"
-#include "ewf_adapter_api_control.c"
-#include "ewf_adapter_api_modem.c"
-#include "ewf_adapter_api_modem_general.c"
-#include "ewf_adapter_api_modem_sim_utility.c"
-#include "ewf_adapter_api_modem_packet_domain.c"
-#include "ewf_adapter_api_modem_network_service.c"
-#include "ewf_adapter_sequans.c"
-#include "ewf_adapter_renesas_ryz014.c"
-#include "ewf_adapter_renesas_common_control.c"
-#include "ewf_adapter_renesas_common_info.c"
-#include "ewf_adapter_renesas_common_urc.c"
-#include "ewf_adapter_renesas_common_internet.c"
-#include "ewf_adapter_renesas_common_nvm.c"
-#include "ewf_adapter_renesas_common_mqtt_basic.c"
-#include "ewf_adapter_renesas_common_tls_basic.c"
-#include "ewf_middleware_netxduo.c"
+#include "ewf_lib.h"
+#include "ewf_platform_threadx.h"
+#include "ewf_allocator.h"
+#include "ewf_allocator_threadx.h"
+#include "ewf_interface.h"
+#include "ewf_interface_rx_uart.h"
+#include "ewf_adapter.h"
+#include "ewf_adapter_renesas_common.h"
+#include "ewf_adapter_sequans.h"
+#include "ewf_adapter_renesas_ryz014.h"
+#include "ewf_middleware_netxduo.h"
 
 #include "ewf_example.config.h"
 
 /* Modem might take some minutes to attach and register to the network. Time out value in seconds */
 #define EWF_ADAPTER_RENESAS_NETWORK_REGISTER_TIMEOUT  (1200)
 
-#include "sample_azure_iot_embedded_sdk_pnp.c"
-#include "sample_azure_iot_embedded_sdk_connect.c"
+//#include "sample_azure_iot_embedded_sdk_pnp.c"
+//#include "sample_azure_iot_embedded_sdk_connect.c"
+//extern void sample_entry(NX_IP *ip_ptr, NX_PACKET_POOL *pool_ptr, NX_DNS *dns_ptr, UINT (*unix_time_callback)(ULONG *unix_time));
 
 /* Define user configurable symbols. */
 #ifndef SAMPLE_IP_STACK_SIZE
@@ -171,11 +152,11 @@ void application_thread_entry(ULONG entry_input)
 	// Release the RYZ014A from reset
 	PORTA.PODR.BIT.B1= 1;
 	PORTA.PDR.BIT.B1= 1;
-	tx_thread_sleep (200);
+	tx_thread_sleep (300);
 	PORTA.PODR.BIT.B1= 0;
-	printf("Waiting for the module to Power Reset!\r\n");
+	LOG_TERMINAL("Waiting for the module to Power Reset!\r\n");
 	ewf_platform_sleep(300);
-	printf("Ready\r\n");
+	LOG_TERMINAL("Ready\r\n");
 
     // Start the adapter
     if (ewf_result_failed(result = ewf_adapter_start(adapter_ptr)))
@@ -351,17 +332,17 @@ void application_thread_entry(ULONG entry_input)
     nx_ip_gateway_address_get(&ip_0, &gateway_address);
 
     /* Output IP address and gateway address. */
-    printf("IP address: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("IP address: %lu.%lu.%lu.%lu\r\n",
            (ip_address >> 24),
            (ip_address >> 16 & 0xFF),
            (ip_address >> 8 & 0xFF),
            (ip_address & 0xFF));
-    printf("Mask: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("Mask: %lu.%lu.%lu.%lu\r\n",
            (network_mask >> 24),
            (network_mask >> 16 & 0xFF),
            (network_mask >> 8 & 0xFF),
            (network_mask & 0xFF));
-    printf("Gateway: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("Gateway: %lu.%lu.%lu.%lu\r\n",
            (gateway_address >> 24),
            (gateway_address >> 16 & 0xFF),
            (gateway_address >> 8 & 0xFF),
@@ -456,7 +437,7 @@ UINT    dns_server_address_size = 12;
     }
 
     /* Output DNS Server address.  */
-    printf("DNS Server address: %lu.%lu.%lu.%lu\r\n",
+    LOG_TERMINAL("DNS Server address: %lu.%lu.%lu.%lu\r\n",
            (dns_server_address[0] >> 24),
            (dns_server_address[0] >> 16 & 0xFF),
            (dns_server_address[0] >> 8 & 0xFF),

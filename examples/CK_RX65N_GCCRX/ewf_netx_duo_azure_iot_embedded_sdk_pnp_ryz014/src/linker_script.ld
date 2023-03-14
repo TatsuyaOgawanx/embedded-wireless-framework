@@ -2,7 +2,7 @@ MEMORY
 {
 	RAM : ORIGIN = 0x4, LENGTH = 0x3fffc
 	RAM2 : ORIGIN = 0x00800000, LENGTH = 393216
-	ROM : ORIGIN = 0xFFE00000, LENGTH = 2097152
+	ROM : ORIGIN = 0xFFF00000, LENGTH = 1048576
 	OFS : ORIGIN = 0xFE7F5D00, LENGTH = 128
 }
 SECTIONS
@@ -16,8 +16,13 @@ SECTIONS
 	.fvectors 0xFFFFFFFC: AT(0xFFFFFFFC)
 	{
 		KEEP(*(.fvectors))
+	} > ROM 
+	P_NEW_FIRMWARE 0xFFF00000 : AT(0xFFF00000)
+    {
+	*( P_NEW_FIRMWARE )
 	} > ROM
-	.text 0xFFE00000: AT(0xFFE00000)
+	
+	.text 0xFFF00000: AT(0xFFF00000)
 	{
 		*(.text)
 		*(.text.*)
@@ -90,7 +95,33 @@ SECTIONS
 		__DTOR_END__ = .;
 		. = ALIGN(2);
 		_mdata = .;
+		. += _edata - _data;
 	} > ROM
+	.pfram2 ALIGN(4) :
+	{
+		_PFRAM2_start = .;
+		. += _RPFRAM2_end - _RPFRAM2_start;
+		_PFRAM2_end = .;
+	} > ROM
+	
+	B_ETHERNET_BUFFERS_1 0x00010000 (NOLOAD) : AT(0x00010000)
+    {
+        _B_ETHERNET_BUFFERS_1_start = .;
+        *(B_ETHERNET_BUFFERS_1)
+        _B_ETHERNET_BUFFERS_1_end = .;
+    } >RAM
+        B_RX_DESC_1 (NOLOAD) :
+    {
+        _B_RX_DESC_1_start = .;
+        *(B_RX_DESC_1)
+        _B_RX_DESC_1_end = .;
+    } >RAM
+        B_TX_DESC_1 (NOLOAD) :
+    {
+        _B_TX_DESC_1_start = .;
+        *(B_TX_DESC_1)
+        _B_TX_DESC_1_end = .;
+    } >RAM
 	.data : AT(_mdata)
 	{
 		_data = .;
@@ -101,10 +132,18 @@ SECTIONS
 		*(D_2)
 		_edata = .;
 	} > RAM
+	.rpfram2 ALIGN(4) : AT(_PFRAM2_start)
+	{
+		_RPFRAM2_start = .;
+		*(PFRAM2)
+		. = ALIGN(4);
+		_RPFRAM2_end = .;
+	} >RAM
 	.gcc_exc :
 	{
 		*(.gcc_exc)
 	} > RAM
+	
 	.bss :
 	{
 		_bss = .;
@@ -149,15 +188,15 @@ SECTIONS
 	{
 		KEEP(*(.ofs8))
 	} > OFS
-.r_bsp_NULL :
+	.r_bsp_NULL :
 	{
 		. += 0x100;
 		"_r_bsp_NULL_end" = .;
-	} >RAM
+	} >RAM AT>RAM
 .r_bsp_istack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_istack))
-	} >RAM
+	} >RAM AT>RAM
 .istack :
 	{
 		"_istack" = .;
@@ -165,7 +204,7 @@ SECTIONS
 .r_bsp_ustack BLOCK(0x4) (NOLOAD) :
 	{
 		KEEP(*(.r_bsp_ustack))
-	} >RAM
+	} >RAM AT>RAM
 .ustack :
 	{
 		"_ustack" = .;
