@@ -13,49 +13,49 @@
             </toolchain>
         </configuration>
         <platform id="R5F565NEHxFB"/>
-        <option id="board" value="CK-RX65N (V1.01)"/>
+        <option id="board" value="user_board"/>
     </general>
     <tool id="Clock">
         <option enabled="true" id="vccinput" selection="textinputitem">
-            <item enabled="true" id="textinputitem" input="3.3" value="3.3"/>
+            <item enabled="true" id="textinputitem" input="3.3" value="3.300"/>
         </option>
-        <option enabled="true" id="mainclockenable" selection="check">
+        <option enabled="true" id="mainclockenable" selection="uncheck">
             <item enabled="true" id="check"/>
             <item enabled="true" id="uncheck"/>
         </option>
-        <option enabled="true" id="mainsourcebox" selection="srcR">
+        <option enabled="false" id="mainsourcebox" selection="srcR">
             <item enabled="true" id="srcR"/>
             <item enabled="true" id="srcEOI"/>
         </option>
-        <option enabled="true" id="mainfrequency" selection="textinputitem">
-            <item enabled="true" id="textinputitem" input="24" value="24"/>
+        <option enabled="false" id="mainfrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="24" value="24.000000"/>
         </option>
-        <option enabled="true" id="mainwaittime" selection="textinputitem">
-            <item enabled="true" id="textinputitem" input="9980" value="9980"/>
+        <option enabled="false" id="mainwaittime" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="9980" value="9980.000000"/>
         </option>
-        <option enabled="true" id="subclockenable" selection="check">
+        <option enabled="true" id="subclockenable" selection="uncheck">
             <item enabled="true" id="check"/>
             <item enabled="true" id="uncheck"/>
         </option>
-        <option enabled="true" id="subfrequency" selection="textinputitem">
+        <option enabled="false" id="subfrequency" selection="textinputitem">
             <item enabled="true" id="textinputitem" input="" value="32.768"/>
         </option>
-        <option enabled="true" id="subdrivecap" selection="standardCL">
+        <option enabled="false" id="subdrivecap" selection="standardCL">
             <item enabled="true" id="standardCL"/>
             <item enabled="true" id="lowCL"/>
         </option>
-        <option enabled="true" id="subwaittime" selection="textinputitem">
-            <item enabled="true" id="textinputitem" input="2000" value="2000"/>
+        <option enabled="false" id="subwaittime" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="2000" value="2000.000000"/>
         </option>
-        <option enabled="true" id="hococlockenable" selection="uncheck">
+        <option enabled="true" id="hococlockenable" selection="check">
             <item enabled="true" id="check"/>
             <item enabled="true" id="uncheck"/>
         </option>
-        <option enabled="false" id="hocooscenable" selection="uncheck">
+        <option enabled="true" id="hocooscenable" selection="uncheck">
             <item enabled="true" id="check"/>
             <item enabled="true" id="uncheck"/>
         </option>
-        <option enabled="false" id="hocofrequency" selection="frq16">
+        <option enabled="true" id="hocofrequency" selection="frq16">
             <item enabled="true" id="frq16"/>
             <item enabled="true" id="frq18"/>
             <item enabled="true" id="frq20"/>
@@ -74,27 +74,27 @@
         <option enabled="false" id="iwdtfrequency" selection="textinputitem">
             <item enabled="true" id="textinputitem" input="" value="120"/>
         </option>
-        <option enabled="true" id="pllswitcher" selection="pllmain">
-            <item enabled="true" id="pllmain" input="" value="24"/>
-            <item enabled="false" id="pllhoco" input="" value="16"/>
+        <option enabled="true" id="pllswitcher" selection="pllhoco">
+            <item enabled="false" id="pllmain" input="" value="24.0"/>
+            <item enabled="true" id="pllhoco" input="" value="16"/>
         </option>
         <option enabled="true" id="plldivider" selection="div1-1">
             <item enabled="true" id="div1-1"/>
             <item enabled="true" id="div1-2"/>
-            <item enabled="true" id="div1-3"/>
+            <item enabled="false" id="div1-3"/>
         </option>
-        <option enabled="true" id="pllmul" selection="mul10-1">
+        <option enabled="true" id="pllmul" selection="mul15-1">
             <item enabled="true" id="mul10-1"/>
-            <item enabled="false" id="mul10_5-1"/>
-            <item enabled="false" id="mul11-1"/>
-            <item enabled="false" id="mul11_5-1"/>
-            <item enabled="false" id="mul12-1"/>
-            <item enabled="false" id="mul12_5-1"/>
-            <item enabled="false" id="mul13-1"/>
-            <item enabled="false" id="mul13_5-1"/>
-            <item enabled="false" id="mul14-1"/>
-            <item enabled="false" id="mul14_5-1"/>
-            <item enabled="false" id="mul15-1"/>
+            <item enabled="true" id="mul10_5-1"/>
+            <item enabled="true" id="mul11-1"/>
+            <item enabled="true" id="mul11_5-1"/>
+            <item enabled="true" id="mul12-1"/>
+            <item enabled="true" id="mul12_5-1"/>
+            <item enabled="true" id="mul13-1"/>
+            <item enabled="true" id="mul13_5-1"/>
+            <item enabled="true" id="mul14-1"/>
+            <item enabled="true" id="mul14_5-1"/>
+            <item enabled="true" id="mul15-1"/>
             <item enabled="false" id="mul15_5-1"/>
             <item enabled="false" id="mul16-1"/>
             <item enabled="false" id="mul16_5-1"/>
@@ -128,9 +128,9 @@
         </option>
         <option enabled="true" id="sckswitcher" selection="pll">
             <item enabled="true" id="pll" input="" value="2.4E8"/>
-            <item enabled="true" id="main" input="" value="24000000"/>
-            <item enabled="true" id="sub" input="" value="32768.0"/>
-            <item enabled="false" id="hoco" input="" value="16000000"/>
+            <item enabled="false" id="main" input="" value="2.4E7"/>
+            <item enabled="false" id="sub" input="" value="32768.0"/>
+            <item enabled="true" id="hoco" input="" value="16000000"/>
             <item enabled="false" id="loco" input="" value="240000"/>
         </option>
         <option enabled="true" id="fclkdivider" selection="comboBox1-4">
@@ -204,11 +204,11 @@
             <item enabled="false" id="comboBox1-1"/>
             <item enabled="true" id="comboBox1-2"/>
         </option>
-        <option enabled="true" id="uckenable" selection="check">
+        <option enabled="true" id="uckenable" selection="uncheck">
             <item enabled="true" id="check"/>
             <item enabled="true" id="uncheck"/>
         </option>
-        <option enabled="true" id="uckdivider" selection="comboBox1-5">
+        <option enabled="false" id="uckdivider" selection="comboBox1-5">
             <item enabled="false" id="comboBox1-2"/>
             <item enabled="false" id="comboBox1-3"/>
             <item enabled="false" id="comboBox1-4"/>
@@ -245,19 +245,19 @@
         <option enabled="false" id="sdclk" selection="textoutputitem">
             <item enabled="true" id="textoutputitem" input="" value="120.0"/>
         </option>
-        <option enabled="true" id="uclk" selection="textoutputitem">
-            <item enabled="true" id="textoutputitem" input="" value="48.0"/>
+        <option enabled="false" id="uclk" selection="textoutputitem">
+            <item enabled="false" id="textoutputitem" input="" value="48.0"/>
         </option>
         <option enabled="false" id="caclclk" selection="textoutputitem">
             <item enabled="true" id="textoutputitem" input="" value="240"/>
         </option>
-        <option enabled="false" id="cachclk" selection="textoutputitem">
+        <option enabled="true" id="cachclk" selection="textoutputitem">
             <item enabled="true" id="textoutputitem" input="" value="16"/>
         </option>
-        <option enabled="true" id="cacsclk" selection="textoutputitem">
+        <option enabled="false" id="cacsclk" selection="textoutputitem">
             <item enabled="true" id="textoutputitem" input="" value="32.768"/>
         </option>
-        <option enabled="true" id="rtcsclkenable" selection="uncheck">
+        <option enabled="false" id="rtcsclkenable" selection="uncheck">
             <item enabled="true" id="check"/>
             <item enabled="true" id="uncheck"/>
         </option>
@@ -267,8 +267,8 @@
         <option enabled="false" id="cacilclk" selection="textoutputitem">
             <item enabled="true" id="textoutputitem" input="" value="120"/>
         </option>
-        <option enabled="true" id="cacmclk" selection="textoutputitem">
-            <item enabled="true" id="textoutputitem" input="" value="24"/>
+        <option enabled="false" id="cacmclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="24.0"/>
         </option>
     </tool>
     <tool id="Interrupt">
@@ -495,25 +495,30 @@
     </tool>
     <tool id="Pins" version="1.0.1.0">
         <pinItem allocation="10" comments="" direction="None" id="EMLE" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="20" comments="" direction="None" id="XTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="18" comments="" direction="None" id="XCOUT" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="70" comments="" direction="None" id="RXD5" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="7" comments="" direction="None" id="RXD6" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="17" comments="" direction="None" id="XCIN" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="8" comments="" direction="None" id="TXD6" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="67" comments="" direction="None" id="TXD5" isUsedBySoftware="false" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="22" comments="" direction="None" id="EXTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="16" comments="" direction="None" id="FINED" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="13" comments="" direction="None" id="CTS6#" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="7" comments="" direction="None" id="RXD6" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinnumItem comment="LED2_B" id="88"/>
+        <pinnumItem comment="SENSOR-SDA" id="44"/>
         <pinnumItem comment="SERIAL-CTS" id="89"/>
+        <pinnumItem comment="SENSOR-SCL" id="45"/>
+        <pinnumItem comment="USB_DM" id="47"/>
+        <pinnumItem comment="USB_DP" id="48"/>
         <pinnumItem comment="OUTDOOR-AIR-QUALITY-RES_N" id="113"/>
         <pinnumItem comment="INDOOR-AIR-QUALITY-RES_N" id="114"/>
         <pinnumItem comment="LED2_G" id="90"/>
         <pinnumItem comment="LED4" id="94"/>
+        <pinnumItem comment="PMOD1-GPIO1" id="51"/>
         <pinnumItem comment="PMOD2-GPIO1" id="96"/>
+        <pinnumItem comment="ETHERNET-LINKSTA" id="52"/>
         <pinnumItem comment="BIOMETRIC-INT" id="98"/>
+        <pinnumItem comment="PMOD2-GPIO3" id="54"/>
+        <pinnumItem comment="PMOD2-GPIO2" id="56"/>
         <pinnumItem comment="PMOD1-CS" id="13"/>
+        <pinnumItem comment="ETHERNET-CRS_DV" id="58"/>
         <pinnumItem comment="XCIN" id="17"/>
         <pinnumItem comment="XCOUT" id="18"/>
         <pinnumItem comment="S1" id="19"/>
@@ -525,53 +530,44 @@
         <pinnumItem comment="PMOD1-MISO" id="7"/>
         <pinnumItem comment="PMOD1-MOSI" id="8"/>
         <pinnumItem comment="MICROPHONES1-OUT" id="129"/>
+        <pinnumItem comment="ETHERNET-TXD1" id="63"/>
         <pinnumItem comment="XTAL" id="20"/>
+        <pinnumItem comment="ETHERNET-TXD0" id="64"/>
+        <pinnumItem comment="ETHERNET-RST#" id="65"/>
         <pinnumItem comment="EXTAL" id="22"/>
+        <pinnumItem comment="SERIAL-TXD" id="67"/>
+        <pinnumItem comment="ETHERNET-RX_ER" id="68"/>
         <pinnumItem comment="PMOD2-SCK" id="25"/>
+        <pinnumItem comment="ETHERNET-REF-50-CK" id="69"/>
         <pinnumItem comment="PMOD2-MISO" id="26"/>
         <pinnumItem comment="PMOD2-MOSI" id="27"/>
         <pinnumItem comment="INDOOR-AIR-QUALITY-INT" id="134"/>
         <pinnumItem comment="OUTDOOR-AIR-QUALITY-INT" id="135"/>
-        <pinnumItem comment="LED6" id="32"/>
-        <pinnumItem comment="USB_VBUSEN" id="33"/>
-        <pinnumItem comment="PMOD2-CS" id="34"/>
-        <pinnumItem comment="LED3" id="35"/>
-        <pinnumItem comment="LED2_R" id="38"/>
-        <pinnumItem comment="USBFS_VBUS" id="40"/>
-        <pinnumItem comment="PMOD1-GPIO0" id="42"/>
-        <pinnumItem comment="USB_OVRCURA" id="43"/>
-        <pinnumItem comment="SENSOR-SDA" id="44"/>
-        <pinnumItem comment="SENSOR-SCL" id="45"/>
-        <pinnumItem comment="USB_DM" id="47"/>
-        <pinnumItem comment="USB_DP" id="48"/>
-        <pinnumItem comment="PMOD1-GPIO1" id="51"/>
-        <pinnumItem comment="ETHERNET-LINKSTA" id="52"/>
-        <pinnumItem comment="PMOD2-GPIO3" id="54"/>
-        <pinnumItem comment="PMOD2-GPIO2" id="56"/>
-        <pinnumItem comment="ETHERNET-CRS_DV" id="58"/>
-        <pinnumItem comment="ETHERNET-TXD1" id="63"/>
-        <pinnumItem comment="ETHERNET-TXD0" id="64"/>
-        <pinnumItem comment="ETHERNET-RST#" id="65"/>
-        <pinnumItem comment="SERIAL-TXD" id="67"/>
-        <pinnumItem comment="ETHERNET-RX_ER" id="68"/>
-        <pinnumItem comment="ETHERNET-REF-50-CK" id="69"/>
         <pinnumItem comment="SERIAL-RXD" id="70"/>
         <pinnumItem comment="ETHERNET-RXD0" id="71"/>
         <pinnumItem comment="ETHERNET-RXD1" id="72"/>
         <pinnumItem comment="SERIAL-RTS" id="75"/>
+        <pinnumItem comment="LED6" id="32"/>
+        <pinnumItem comment="USB_VBUSEN" id="33"/>
+        <pinnumItem comment="PMOD2-CS" id="34"/>
         <pinnumItem comment="PMOD1-GPIO2" id="78"/>
+        <pinnumItem comment="LED3" id="35"/>
         <pinnumItem comment="PMOD1-GPIO3" id="79"/>
+        <pinnumItem comment="LED2_R" id="38"/>
         <pinnumItem comment="MOTION-TRACKING-INT1" id="101"/>
         <pinnumItem comment="ETHERNET-TXD_EN" id="81"/>
+        <pinnumItem comment="USBFS_VBUS" id="40"/>
         <pinnumItem comment="ETHERNET-MDC" id="85"/>
+        <pinnumItem comment="PMOD1-GPIO0" id="42"/>
         <pinnumItem comment="ETHERNET-MDIO" id="86"/>
+        <pinnumItem comment="USB_OVRCURA" id="43"/>
     </tool>
     <tool id="Summary" version="1.0.0.0">
         <option id="com.renesas.smc.code.path" value="src\smc_gen"/>
         <option id="com.renesas.smc.code.type" value="Normal Folder"/>
     </tool>
     <tool id="SWComponent" version="1.0.0.0">
-        <configuration enable="true" exclude="false" id="3abc14f0-c859-4e49-ba7f-a41170391fe1" inuse="true" name="filex">
+        <configuration enable="true" exclude="false" id="e16ef2a5-e223-4e8b-b04d-a02badfc0045" inuse="true" name="filex">
             <component description="Dependency: threadx&#10;Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" detailDescription="Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" display="Azure RTOS FileX" id="filex6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
                 <gridItem id="USE_FX_MAX_LONG_NAME_LEN" selectedIndex="0"/>
                 <gridItem id="FX_MAX_LONG_NAME_LEN" selectedIndex="256"/>
@@ -616,11 +612,11 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="618d432f-e8d9-43bc-a09d-99b4c7f30376" inuse="true" name="netxduo_addons">
+        <configuration enable="true" exclude="false" id="f01b29c1-acf7-457d-9fa7-d4b768b092f4" inuse="true" name="netxduo_addons">
             <component description="Dependency: filex, netxduo&#10;Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." detailDescription="Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." display="Azure RTOS NetX Duo Addons" id="netxduo_addons6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="1226b9ca-8f7a-4349-9ad2-49fb55682556" inuse="true" name="azurertos_object">
+        <configuration enable="true" exclude="false" id="d113a478-bf08-45c6-9f51-02ecd84eee71" inuse="true" name="azurertos_object">
             <allocatable id="" name="" type="">
                 <allocatable id="THREAD" name="THREAD" type="TABALLOCATABLE">
                     <allocatable id="THREAD1" name="THREAD1" type="ROWALLOCATABLE">
@@ -644,7 +640,7 @@
             <component description="" detailDescription="" display="AzureRTOS Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.azurertos.object" version="1.0.112"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="57e72c56-918e-4081-b949-531116207407" inuse="true" name="threadx">
+        <configuration enable="true" exclude="false" id="9bdb5e6d-4088-400c-b80b-25d8195a3ce0" inuse="true" name="threadx">
             <component description="Dependency: None&#10;Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" detailDescription="Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" display="Azure RTOS ThreadX" id="threadx6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
                 <gridItem id="USE_TX_MAX_PRIORITIES" selectedIndex="0"/>
                 <gridItem id="TX_MAX_PRIORITIES" selectedIndex="32"/>
@@ -693,7 +689,7 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="af30356f-4e9a-4043-884a-7b1d30736810" inuse="true" name="netxduo">
+        <configuration enable="true" exclude="false" id="7ec36187-c7e6-4589-96be-5db3684e7cb0" inuse="true" name="netxduo">
             <component description="Dependency: threadx&#10;Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" detailDescription="Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" display="Azure RTOS NetX Duo" id="netxduo6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
                 <gridItem id="USE_NX_MAX_PHYSICAL_INTERFACES" selectedIndex="0"/>
                 <gridItem id="NX_MAX_PHYSICAL_INTERFACES" selectedIndex="1"/>
@@ -871,6 +867,22 @@
                 <gridItem id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_VENDOR" selectedIndex="4"/>
                 <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex="0"/>
                 <gridItem id="NX_AZURE_IOT_HUB_CLIENT_USER_AGENT_DEVICE_TYPE" selectedIndex=""/>
+                <gridItem id="SAMPLE_DEVICE_MANUFACTURER" selectedIndex="RENESAS"/>
+                <gridItem id="SAMPLE_DEVICE_MODEL" selectedIndex=""/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MANUFACTURER" selectedIndex="RENESAS"/>
+                <gridItem id="SAMPLE_LEAF_DEVICE_MODEL" selectedIndex=""/>
+                <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" selectedIndex="0"/>
+                <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_WINDOW_SIZE" selectedIndex="16*1024"/>
+                <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" selectedIndex="0"/>
+                <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_CONNECT_TIMEOUT" selectedIndex="30"/>
+                <gridItem id="USE_NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT" selectedIndex="0"/>
+                <gridItem id="NX_AZURE_IOT_ADU_AGENT_HTTP_DOWNLOAD_TIMEOUT" selectedIndex="300"/>
+                <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT" selectedIndex="0"/>
+                <gridItem id="NX_AZURE_IOT_HUB_CLIENT_DNS_TIMEOUT" selectedIndex="5 * NX_IP_PERIODIC_RATE"/>
+                <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC" selectedIndex="0"/>
+                <gridItem id="NX_AZURE_IOT_HUB_CLIENT_MAX_BACKOFF_IN_SEC" selectedIndex="10 * 60"/>
+                <gridItem id="USE_NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC" selectedIndex="0"/>
+                <gridItem id="NX_AZURE_IOT_HUB_CLIENT_INITIAL_BACKOFF_IN_SEC" selectedIndex="3"/>
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
